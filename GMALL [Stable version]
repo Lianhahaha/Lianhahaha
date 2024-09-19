@@ -41,7 +41,7 @@ public class Store {
                 System.out.println("Current total: " + total);
 
             } else if (choice == 6) {
-                System.out.println("Exiting the park.");
+                System.out.println("Exiting the park...");
                 break; 
             } else {
                 System.out.println("Invalid choice. Please choose between 1/2/3/4/5/6.");

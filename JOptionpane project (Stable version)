@@ -1,0 +1,180 @@
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+
+public class boss {
+    public static void main(String[] args) {
+        JOptionPane.showMessageDialog(null,"Welcome To Jurassic Eatery");
+
+        while (true) {
+            boolean continueShopping = order();
+            if (!continueShopping) {
+                JOptionPane.showMessageDialog(null, "Thank you, Have a good day ahead!.");
+                break; 
+            }
+        }
+    }
+
+    public static boolean order() {
+        double total = 0;
+        double paymentGiven = 0;
+        double remainingAmount = 0;
+        String again = null;
+
+        
+        ArrayList<String> orderedItems = new ArrayList<>();
+        ArrayList<Integer> orderedQuantities = new ArrayList<>();
+        ArrayList<Double> orderedPrices = new ArrayList<>();
+        
+        double[] prices = {15.00, 20.00, 10.00, 100.00, 150.00};
+        String[] items = {"pinakbet", "Kare-kare", "Dinuguan", "Bulalo", "Sabaw"};
+
+        
+        do {
+            String menu = "What's in the menu?\n" +
+                          "1. Pinakbet - 15.00\n" +
+                          "2. Kare-kare - 20.00\n" +
+                          "3. Dinuguan - 10.00\n" +
+                          "4. Bulalo - 100.00\n" +
+                          "5. Sabaw - 150.00\n" +
+                          "6. Choose between the items above, or press here to exit:";
+            String input = JOptionPane.showInputDialog(menu);
+            
+            
+            if (input == null || input.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Invalid, Sorry, Please do try again.");
+                continue;
+            }
+
+            
+            int choice;
+            try {
+                choice = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid number!");
+                continue;
+            }
+            
+            if (choice >= 1 && choice <= 5) {
+                
+                String qtyInput = JOptionPane.showInputDialog("You chose " + items[choice - 1] +
+                                                                "\nHow many would you like to buy?");
+                int quantity;
+                try {
+                    quantity = Integer.parseInt(qtyInput);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Please enter a valid quantity!");
+                    continue;
+                }
+
+                
+                orderedItems.add(items[choice - 1]);
+                orderedQuantities.add(quantity);
+                orderedPrices.add(prices[choice - 1] * quantity);
+
+                total += quantity * prices[choice - 1];
+                JOptionPane.showMessageDialog(null, "Current Total: " + total);
+
+            } else if (choice == 6) {
+                return false;  
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid choice. Please select between 1 to 6.");
+            }
+
+            
+            again = JOptionPane.showInputDialog("Would ya like to buy more? (Y/N):");
+            
+        } while (again != null && again.equalsIgnoreCase("Y"));
+
+        
+        double discount = 0;
+        if (total >= 700) {
+            discount = total * 0.05;
+            total -= discount;
+            JOptionPane.showMessageDialog(null, "Discount applied: " + discount);
+        }
+
+        
+        remainingAmount = total;
+        boolean paymentSuccessful = false;
+
+        for (int attempts = 0; attempts < 3; attempts++) {
+            if (remainingAmount > 0) {
+                String payInput = JOptionPane.showInputDialog("Total amount to pay: " + remainingAmount + "\nPlease enter exact payment amount:");
+                
+                
+                if (payInput == null || payInput.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Invalid input! Please do try again.");
+                    continue;
+                }
+
+                double pay;
+                try {
+                    pay = Double.parseDouble(payInput);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Please enter a valid amount!");
+                    continue;
+                }
+
+                paymentGiven += pay;
+
+                if (pay < remainingAmount) {
+                    JOptionPane.showMessageDialog(null, "Sorry, your payment is insufficient.");
+                    remainingAmount -= pay;
+                    JOptionPane.showMessageDialog(null, "Remaining balance: " + remainingAmount);
+                } else {
+                    double change = pay - remainingAmount;
+                    JOptionPane.showMessageDialog(null, "Payment successful! Your change: " + Math.round(change * 100.0) / 100.0);
+                    remainingAmount = 0;
+                    paymentSuccessful = true;
+                    break; 
+                }
+            }
+        }
+
+        if (!paymentSuccessful) {
+            JOptionPane.showMessageDialog(null, "Please Enter Item Tag, If Failed After 3 Attempts. Order Will Be Voided.");
+            return true; 
+        }
+
+        
+        StringBuilder receipt = new StringBuilder();
+        
+        receipt.append("RECEIPT:\n");
+        for (int i = 0; i < orderedItems.size(); i++) {
+            receipt.append(orderedItems.get(i)).append(" x")
+                   .append(orderedQuantities.get(i))
+                   .append(" = ")
+                   .append(String.format("%.2f", orderedPrices.get(i)))
+                   .append("\n");
+        }
+        if (discount > 0) {
+            receipt.append("Discount: ").append(String.format("%.2f", discount)).append("\n");
+        }
+        receipt.append("Total: ").append(String.format("%.2f", total + discount)).append("\n"); 
+        receipt.append("Discounted Total: ").append(String.format("%.2f", total)).append("\n"); 
+        receipt.append("Money Given: ").append(String.format("%.2f", paymentGiven)).append("\n");
+        
+        if (paymentGiven > total) {
+            double change = paymentGiven - total;
+            
+            receipt.append("***** CHANGE: ").append(String.format("%.2f", change)).append(" *****\n");
+        }
+        
+        receipt.append("=============================\n");
+
+        JOptionPane.showMessageDialog(null, receipt.toString());
+
+        
+        String pet = JOptionPane.showInputDialog("Enter Pet Name:");
+        String number = JOptionPane.showInputDialog("Enter a Number:");
+        int ul = Integer.parseInt(number);
+        String number1 = JOptionPane.showInputDialog("Enter a Double Number:");
+        double uls = Double.parseDouble(number1);
+
+        JOptionPane.showMessageDialog(null, "Number + 100: " + (ul + 100));
+        JOptionPane.showMessageDialog(null, "Double Number + 100: " + (uls + 100));
+        JOptionPane.showMessageDialog(null, pet + "\nWow, Pet!");
+
+        return true;  
+    }
+}

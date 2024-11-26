@@ -1,0 +1,98 @@
+import javax.swing.JOptionPane;
+
+public class ShapeCalculator {
+    public static double calculateCircleArea(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    public static double calculateRectangleArea(double length, double width) {
+        return length * width;
+    }
+
+    public static double calculateTriangleArea(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+    public static double calculateSphereVolume(double radius) {
+        return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
+    }
+
+    public static double calculateCylinderVolume(double radius, double height) {
+        return Math.PI * Math.pow(radius, 2) * height;
+    }
+
+    public static double calculateTriangleSide(double a, double b, double angleC) {
+        double angleInRadians = Math.toRadians(angleC);
+        return Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(angleInRadians));
+    }
+
+    public static double calculateCircleSegmentArea(double radius, double angle) {
+        double angleInRadians = Math.toRadians(angle);
+        return (Math.pow(radius, 2) / 2) * (angleInRadians - Math.sin(angleInRadians));
+    }
+
+    public static double calculateSphereSurfaceArea(double radius) {
+        return 4 * Math.PI * Math.pow(radius, 2);
+    }
+
+    public static void main(String[] args) {
+        String[] options = {
+            "Area of Circle", "Area of Rectangle", "Area of Triangle",
+            "Volume of Sphere", "Volume of Cylinder", 
+            "Law of Cosines - Triangle Side", 
+            "Area of Circle Segment", "Surface Area of Sphere"
+        };
+
+        int choice = JOptionPane.showOptionDialog(null, "Select an option:", 
+            "Shape Calculator", JOptionPane.DEFAULT_OPTION, 
+            JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
+        try {
+            switch (choice) {
+                case 0 -> {
+                    double radius = Double.parseDouble(JOptionPane.showInputDialog("Enter radius:"));
+                    JOptionPane.showMessageDialog(null, "Area of Circle: " + calculateCircleArea(radius));
+                }
+                case 1 -> {
+                    double length = Double.parseDouble(JOptionPane.showInputDialog("Enter length:"));
+                    double width = Double.parseDouble(JOptionPane.showInputDialog("Enter width:"));
+                    JOptionPane.showMessageDialog(null, "Area of Rectangle: " + calculateRectangleArea(length, width));
+                }
+                case 2 -> {
+                    double base = Double.parseDouble(JOptionPane.showInputDialog("Enter base:"));
+                    double height = Double.parseDouble(JOptionPane.showInputDialog("Enter height:"));
+                    JOptionPane.showMessageDialog(null, "Area of Triangle: " + calculateTriangleArea(base, height));
+                }
+                case 3 -> {
+                    double radius = Double.parseDouble(JOptionPane.showInputDialog("Enter radius:"));
+                    JOptionPane.showMessageDialog(null, "Volume of Sphere: " + calculateSphereVolume(radius));
+                }
+                case 4 -> {
+                    double radius = Double.parseDouble(JOptionPane.showInputDialog("Enter radius:"));
+                    double height = Double.parseDouble(JOptionPane.showInputDialog("Enter height:"));
+                    JOptionPane.showMessageDialog(null, "Volume of Cylinder: " + calculateCylinderVolume(radius, height));
+                }
+                case 5 -> {
+                    double a = Double.parseDouble(JOptionPane.showInputDialog("Enter side a:"));
+                    double b = Double.parseDouble(JOptionPane.showInputDialog("Enter side b:"));
+                    double angleC = Double.parseDouble(JOptionPane.showInputDialog("Enter angle C (in degrees):"));
+                    JOptionPane.showMessageDialog(null, "Third side: " + calculateTriangleSide(a, b, angleC));
+                }
+                case 6 -> {
+                    double radius = Double.parseDouble(JOptionPane.showInputDialog("Enter radius:"));
+                    double angle = Double.parseDouble(JOptionPane.showInputDialog("Enter central angle (in degrees):"));
+                    JOptionPane.showMessageDialog(null, "Area of Circle Segment: " + calculateCircleSegmentArea(radius, angle));
+                }
+                case 7 -> {
+                    double radius = Double.parseDouble(JOptionPane.showInputDialog("Enter radius:"));
+                    JOptionPane.showMessageDialog(null, "Surface Area of Sphere: " + calculateSphereSurfaceArea(radius));
+                }
+                default -> JOptionPane.showMessageDialog(null, "Invalid choice!");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Invalid input! Please enter a valid number.");
+        }
+
+        System.exit(0);
+    }
+}

@@ -1,5 +1,8 @@
+import java.util.Scanner;
 
-public static void main(String[] args) {
+public class ArrayOperations {
+
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Select an option:");
@@ -8,7 +11,7 @@ public static void main(String[] args) {
         System.out.println("Type 2 for Reverse an Array");
         System.out.println("Type 3 for Frequency Counter");
 
-        int choice = input.nextInt();
+        int choice = getValidChoice(input);
 
         switch (choice) {
             case 0:
@@ -30,32 +33,50 @@ public static void main(String[] args) {
         input.close();
     }
 
+   
+    private static int getValidChoice(Scanner input) {
+        while (true) {
+            try {
+                int choice = Integer.parseInt(input.nextLine());
+                if (choice >= 0 && choice <= 3) {
+                    return choice;
+                } else {
+                    System.out.println("Invalid choice. Please choose between 0 and 3.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number between 0 and 3.");
+            }
+        }
+    }
+
     public static void calculateSumAndAverage(Scanner input) {
-        int[] array = new int[10];
+        System.out.println("Enter the size of the array:");
+        int size = getValidArraySize(input);
+
+        int[] array = new int[size];
         int sum = 0;
 
-        System.out.println("Enter 10 integers:");
+        System.out.println("Enter " + size + " integers:");
         for (int i = 0; i < array.length; i++) {
-            array[i] = input.nextInt();
+            array[i] = getValidInteger(input);
             sum += array[i];
         }
 
-        double average = sum / 10.0;
+        double average = sum / (double) size;
 
         System.out.println("Sum of array: " + sum);
         System.out.println("Average of array: " + average);
-
-        // Sample Input:
-        // 5 10 15 20 25 30 35 40 45 50
-       
     }
 
     public static void findMaxAndMin(Scanner input) {
-        int[] array = new int[15];
+        System.out.println("Enter the size of the array:");
+        int size = getValidArraySize(input);
 
-        System.out.println("Enter 15 integers:");
+        int[] array = new int[size];
+
+        System.out.println("Enter " + size + " integers:");
         for (int i = 0; i < array.length; i++) {
-            array[i] = input.nextInt();
+            array[i] = getValidInteger(input);
         }
 
         int max = array[0];
@@ -67,23 +88,22 @@ public static void main(String[] args) {
             }
             if (array[i] < min) {
                 min = array[i];
-
             }
         }
 
         System.out.println("Maximum element: " + max);
         System.out.println("Minimum element: " + min);
-        // Sample Input:
-        // 12 32 32 1 2 3 4 6 6 3 2 1 4 8 9 
-     
     }
 
     public static void reverseArray(Scanner input) {
-        double[] array = new double[5];
+        System.out.println("Enter the size of the array:");
+        int size = getValidArraySize(input);
 
-        System.out.println("Enter 5 floating-point numbers:");
+        double[] array = new double[size];
+
+        System.out.println("Enter " + size + " floating-point numbers:");
         for (int i = 0; i < array.length; i++) {
-            array[i] = input.nextDouble();
+            array[i] = getValidDouble(input);
         }
 
         System.out.println("Array in reverse order:");
@@ -91,34 +111,84 @@ public static void main(String[] args) {
             System.out.print(array[i] + " ");
         }
         System.out.println();
-
-        // Sample Input:
-        // 12 23 32 45 65
-       
     }
 
     public static void countFrequency(Scanner input) {
-        int[] array = new int[10];
+        System.out.println("Enter the size of the array:");
+        int size = getValidArraySize(input);
 
-        System.out.println("Enter 10 integers between 1 and 100:");
+        int[] array = new int[size];
+
+        System.out.println("Enter " + size + " integers between 1 and 100:");
         for (int i = 0; i < array.length; i++) {
-            array[i] = input.nextInt();
+            array[i] = getValidIntegerInRange(input, 1, 100);
         }
 
         System.out.println("Enter the number to check its frequency:");
-        int numberToCheck = input.nextInt();
+        int numberToCheck = getValidInteger(input);
 
         int count = 0;
         for (int num : array) {
             if (num == numberToCheck) {
                 count++;
-
             }
         }
 
         System.out.println("The number " + numberToCheck + " appears " + count + " times in the array.");
-        // Sample Input:
-        // 12 54 65 45 54 65 21 12 3 4
-      
+    }
+
+   
+    private static int getValidInteger(Scanner input) {
+        while (true) {
+            try {
+                return Integer.parseInt(input.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+            }
+        }
+    }
+
+   
+    private static double getValidDouble(Scanner input) {
+        while (true) {
+            try {
+                return Double.parseDouble(input.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid floating-point number.");
+            }
+        }
+    }
+
+   
+    private static int getValidArraySize(Scanner input) {
+        while (true) {
+            try {
+                int size = Integer.parseInt(input.nextLine());
+                if (size > 0) {
+                    return size;
+                } else {
+                    System.out.println("Array size must be greater than 0. Please try again.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number for the array size.");
+            }
+        }
+    }
+
+  
+    private static int getValidIntegerInRange(Scanner input, int min, int max) {
+        while (true) {
+            try {
+                int value = Integer.parseInt(input.nextLine());
+                if (value >= min && value <= max) {
+                    return value;
+                } else {
+                    System.out.println("Please enter a value between " + min + " and " + max + ".");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+            }
+        }
     }
 }
+

@@ -1,0 +1,119 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Calculator {
+    public static void main(String[] args) {
+        
+        JFrame frame = new JFrame("Basic Calculator");
+        frame.setSize(300, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+
+        
+        JLabel display = new JLabel("0", SwingConstants.RIGHT);
+        display.setFont(new Font("Arial", Font.BOLD, 24));
+        display.setOpaque(true);
+        display.setBackground(Color.WHITE);
+        display.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panel.add(display, BorderLayout.NORTH);
+
+        
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(4, 4, 5, 5));
+
+        String[] buttons = {
+            "7", "8", "9", "/",
+            "4", "5", "6", "*",
+            "1", "2", "3", "-",
+            "0", "C", "=", "+"
+        };
+
+        for (String text : buttons) {
+            JButton button = new JButton(text);
+            button.setFont(new Font("Arial", Font.BOLD, 18));
+            buttonPanel.add(button);
+        }
+
+        panel.add(buttonPanel, BorderLayout.CENTER);
+        frame.add(panel);
+
+        
+        ActionListener listener = new ActionListener() {
+            private StringBuilder currentExpression = new StringBuilder();
+            private boolean clearNext = false;
+
+            
+            public void actionPerformed(ActionEvent e) {
+                String command = e.getActionCommand();
+
+                if ("0123456789".contains(command)) {
+                    if (clearNext) {
+                        currentExpression.setLength(0);
+                        clearNext = false;
+                    }
+                    currentExpression.append(command);
+                    display.setText(currentExpression.toString());
+                } else if ("+-*/".contains(command)) {
+                    if (clearNext) {
+                        clearNext = false;
+                    }
+                    currentExpression.append(" ").append(command).append(" ");
+                    display.setText(currentExpression.toString());
+                } else if ("=".equals(command)) {
+                    try {
+                        double result = evaluateExpression(currentExpression.toString());
+                        display.setText(String.valueOf(result));
+                        currentExpression.setLength(0);
+                        currentExpression.append(result);
+                        clearNext = true;
+                    } catch (ArithmeticException ex) {
+                        display.setText("Error");
+                        currentExpression.setLength(0);
+                    }
+                } else if ("C".equals(command)) {
+                    currentExpression.setLength(0);
+                    display.setText("0");
+                }
+            }
+
+            private double evaluateExpression(String expression) throws ArithmeticException {
+                String[] tokens = expression.split(" ");
+                double result = Double.parseDouble(tokens[0]);
+
+                for (int i = 1; i < tokens.length; i += 2) {
+                    String operator = tokens[i];
+                    double nextNumber = Double.parseDouble(tokens[i + 1]);
+
+                    switch (operator) {
+                        case "+" -> result += nextNumber;
+                        case "-" -> result -= nextNumber;
+                        case "*" -> result *= nextNumber;
+                        case "/" -> {
+                            if (nextNumber == 0) {
+                                throw new ArithmeticException("Division by zero");
+                            }
+                            result /= nextNumber;
+                        }
+                    }
+                }
+
+                return result;
+            }
+        };
+
+        for (Component component : buttonPanel.getComponents()) {
+            if (component instanceof JButton) {
+                ((JButton) component).addActionListener(listener);
+            }
+        }
+
+       
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+}

@@ -1,0 +1,70 @@
+package arithmeticseriessum;
+
+/**
+ *
+ * @author CRUZ_CpE121
+ */
+import java.util.Scanner;
+
+public class ArithmeticSeriesSum {
+
+    
+    private int n;
+
+    
+    public ArithmeticSeriesSum(int n) {
+        this.n = n;
+    }
+
+    // Method to calculate the sum of the arithmetic series
+    public int calculateSum() {
+        int sum = 0;  
+        for (int i = 1; i <= n; i++) {  
+            sum += i;  // Add each number from 1 to n to the sum
+        }
+        return sum;
+    }
+
+    // Method to display the result
+    public void displayResult() {
+        System.out.println("The sum of the arithmetic series from 1 to " + n + " is: " + calculateSum());
+    }
+
+    //Used a main method to test the functionality
+    public static void main(String[] args) {
+        // Creates Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+       
+        while (true) {
+            
+            System.out.print("Enter a non-negative integer for the upper limit n (or any letter to exit): ");
+            
+            // Checks if the users input is a valid integer
+            if (scanner.hasNextInt()) {
+                int inputNumber = scanner.nextInt();
+
+              
+                if (inputNumber >= 0) {
+                 
+                    ArithmeticSeriesSum seriesSum = new ArithmeticSeriesSum(inputNumber);
+
+                    // Displays the result
+                    seriesSum.displayResult();
+                } else {
+                    System.out.println("Please enter a non-negative integer.");
+                }
+            } else {
+                // If the input is not a number, break the loop
+                System.out.println("Exiting...Thank you!");
+                break; //It exits the loop if a non-numeric input is entered
+            }
+
+            
+            scanner.nextLine();
+        }
+
+        
+        scanner.close();
+    }
+}

@@ -1,0 +1,61 @@
+
+package factorialcalculator;
+
+/**
+ *
+ * @author CRUZ_CpE121
+ */
+import java.util.Scanner;
+
+public class FactorialCalculator {
+
+    private int number;
+
+    
+    public FactorialCalculator(int number) {
+        this.number = number;
+    }
+
+    // Method to calculate the factorial
+    public long calculateFactorial() {
+        long factorial = 1;  
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
+    
+    public void displayResult() {
+        System.out.println("The factorial of " + number + " is: " + calculateFactorial());
+    }
+
+    
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        
+        while (true) {
+            
+            System.out.print("Enter any non-negative integer (or a negative number to exit): ");
+            int inputNumber = scanner.nextInt();
+
+            
+            if (inputNumber < 0) {
+                System.out.println("Exiting...Thank you!");
+                break;
+                // Exits the loop if a negative number is entered
+            }
+
+           
+            FactorialCalculator factorialCalculator = new FactorialCalculator(inputNumber);
+
+            // Displays the result  
+            factorialCalculator.displayResult();
+        }
+
+       
+        scanner.close();
+    }
+}

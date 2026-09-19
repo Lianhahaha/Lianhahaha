@@ -12,28 +12,12 @@ I'm still learning, so any **feedback** or **code reviews** that can help me imp
 
 ## 🛠️ Tech stack
 
-**Frontend**
-
 <p>
-  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,html,css,tailwind,vite&theme=dark&perline=8" alt="Frontend" />
+  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,express,tailwind,vite&theme=dark&perline=8" alt="Web: JavaScript, TypeScript, React, Next.js, Node, Express, Tailwind, Vite" />
 </p>
 
-**Backend & databases**
-
 <p>
-  <img src="https://skillicons.dev/icons?i=nodejs,express,postgres,firebase,supabase,mysql,mongodb,prisma&theme=dark&perline=8" alt="Backend and databases" />
-</p>
-
-**Software & desktop**
-
-<p>
-  <img src="https://skillicons.dev/icons?i=tauri,rust,electron,java,python,cpp&theme=dark&perline=8" alt="Software and desktop" />
-</p>
-
-**Tools**
-
-<p>
-  <img src="https://skillicons.dev/icons?i=git,github,docker,vercel,vscode,npm,postman,figma&theme=dark&perline=8" alt="Tools" />
+  <img src="https://skillicons.dev/icons?i=postgres,firebase,supabase,tauri,rust,java,git,docker&theme=dark&perline=8" alt="Data, desktop and tools: PostgreSQL, Firebase, Supabase, Tauri, Rust, Java, Git, Docker" />
 </p>
 
 ## 🔥 Streak

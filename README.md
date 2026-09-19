@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Hello, I'm Lian - Full-Stack developer from the Philippines" width="100%" />
+  <img src="assets/banner.svg" alt="Hello, I'm Lian - Student developer from the Philippines" width="100%" />
 </p>
 
 ## 🌙 About me

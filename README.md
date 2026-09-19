@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Hello, I'm Lian - Student developer from the Philippines" width="100%" />
+  <img src="assets/banner.svg" alt="Hello, I'm Lian - student developer from the Philippines" width="100%" />
 </p>
 
 ## 🌙 About me
@@ -12,14 +12,28 @@ I'm still learning, so any **feedback** or **code reviews** that can help me imp
 
 ## 🛠️ Tech stack
 
+**Frontend**
+
 <p>
-  <img src="https://skillicons.dev/icons?i=js,ts,react,nodejs,express,vite,tailwind,firebase&theme=dark&perline=8" alt="Main stack" />
+  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,html,css,tailwind,vite&theme=dark&perline=8" alt="Frontend" />
 </p>
 
-**Also using**
+**Backend & databases**
 
 <p>
-  <img src="https://skillicons.dev/icons?i=html,css,git,github,vercel,vscode,npm,postman&theme=dark&perline=8" alt="Tools" />
+  <img src="https://skillicons.dev/icons?i=nodejs,express,postgres,firebase,supabase,mysql,mongodb,prisma&theme=dark&perline=8" alt="Backend and databases" />
+</p>
+
+**Software & desktop**
+
+<p>
+  <img src="https://skillicons.dev/icons?i=tauri,rust,electron,java,python,cpp&theme=dark&perline=8" alt="Software and desktop" />
+</p>
+
+**Tools**
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,docker,vercel,vscode,npm,postman,figma&theme=dark&perline=8" alt="Tools" />
 </p>
 
 ## 🔥 Streak

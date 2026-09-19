@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Hello, I'm Lian - student developer from the Philippines" width="100%" />
+  <img src="assets/banner.svg" alt="Hello, I'm Lian - full-stack developer" width="100%" />
 </p>
 
-## 🌙 About me
+## About me
 
-I'm **Lian**, a **student developer** from the **Philippines** 🇵🇭
-I build web apps with **JavaScript**, **TypeScript** and **React**, usually late at night ☕
-I'm still learning, so any **feedback** or **code reviews** that can help me improve are always welcome ✨
+I'm Lian, a full-stack developer who likes building things for the web.
+Most of my work is in **TypeScript** and **React**, with **Node** on the back end, and lately I've been exploring desktop apps with **Tauri**.
 
-⭐ Feel free to **follow me** - I'd really appreciate your support!
+I'm still learning, so feedback and code reviews are always welcome.
+If you like what you see, a follow would mean a lot.
 
-## 🛠️ Tech stack
+## Tech stack
 
 <p>
   <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,express,tailwind,vite&theme=dark&perline=8" alt="Web: JavaScript, TypeScript, React, Next.js, Node, Express, Tailwind, Vite" />
@@ -20,14 +20,14 @@ I'm still learning, so any **feedback** or **code reviews** that can help me imp
   <img src="https://skillicons.dev/icons?i=postgres,firebase,supabase,tauri,rust,java,git,docker&theme=dark&perline=8" alt="Data, desktop and tools: PostgreSQL, Firebase, Supabase, Tauri, Rust, Java, Git, Docker" />
 </p>
 
-## 🔥 Streak
+## Activity
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Lianhahaha&theme=tokyonight&hide_border=true&background=0d1117" alt="Streak stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Lianhahaha&hide_border=true&background=0d1117&ring=8fa3d9&fire=f9edb5&currStreakNum=fff6d8&currStreakLabel=b9cdfa&sideNums=d9def0&sideLabels=8b95b8&dates=6b7391&stroke=1f2a44" alt="Contribution streak" />
 </p>
 
 <p align="center">
-  <img src="assets/footer.svg" alt="Thanks for visiting" width="100%" />
+  <img src="assets/footer.svg" alt="Thanks for stopping by" width="100%" />
 </p>
 
 <p align="center">

@@ -38,11 +38,6 @@ I'm **dedicated to constant upskilling**, and I'll be happy to receive any **fee
 ## 📈 GitHub stats
 
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Lianhahaha&show_icons=true&theme=github_dark&hide_border=true" alt="GitHub stats" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Lianhahaha&layout=compact&theme=github_dark&hide_border=true" alt="Top languages" />
-</p>
-
-<p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Lianhahaha&theme=github-dark&hide_border=true" alt="Streak stats" />
 </p>
 

@@ -2,7 +2,6 @@
   <img src="assets/banner.svg" alt="Hello, I'm Lian - full-stack developer" width="100%" />
 </p>
 
-## About me
 
 I'm Lian, a full-stack developer who likes building things for the web.
 Most of my work is in **TypeScript** and **React**, with **Node** on the back end, and lately I've been exploring desktop apps with **Tauri**.

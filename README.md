@@ -3,7 +3,7 @@
 </p>
 
 
-I'm Lian, a full-stack developer focused on creating modern web applications and software solutions. My core stack leverages **TypeScript**, **React**, and **Node.js** across the entire development lifecycle, with an emphasis on clean architecture and performance.
+I'm Lian, a full-stack developer focused on creating modern web applications and software solutions. My core stack leverages **Javascript**, **React**, and **Node.js** across the entire development lifecycle, with an emphasis on clean architecture and performance.
 
 I'm still learning, so feedback and code reviews are always welcome.
 If you like what you see, a follow would mean a lot.

@@ -3,8 +3,7 @@
 </p>
 
 
-I'm Lian, a full-stack developer who likes building things for the web.
-Most of my work is in **TypeScript** and **React**, with **Node** on the back end, and lately I've been exploring desktop apps with **Tauri**.
+I'm Lian, a full-stack developer focused on creating modern web applications and software solutions. My core stack leverages **TypeScript**, **React**, and **Node.js** across the entire development lifecycle, with an emphasis on clean architecture and performance.
 
 I'm still learning, so feedback and code reviews are always welcome.
 If you like what you see, a follow would mean a lot.

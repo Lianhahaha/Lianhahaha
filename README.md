@@ -8,7 +8,6 @@ I'm Lian, a full-stack developer focused on creating modern web applications and
 I'm still learning, so feedback and code reviews are always welcome.
 If you like what you see, a follow would mean a lot.
 
-## Core Skills
 
 **Web**
 

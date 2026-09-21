@@ -9,6 +9,7 @@ I'm still learning, so feedback and code reviews are always welcome.
 If you like what you see, a follow would mean a lot.
 
 
+## Core Skills
 **Web**
 
 <p>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Hello, I'm Lian - full-stack developer" width="100%" />
+  <img src="assets/banner.svg" alt="Hello, I'm Lian - Computer Engineering Student" width="100%" />
 </p>
 
 

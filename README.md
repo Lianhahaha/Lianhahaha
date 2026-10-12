@@ -19,7 +19,7 @@ If you like what you see, a follow would mean a lot.
 **Data, Desktop & Tools**
 
 <p>
-  <img src="assets/skills-tools.svg" alt="Data, desktop, AI and tools: PostgreSQL, MySQL, Firebase, Supabase, Tauri, Rust, Java, Git, Docker, Python, Pydantic, Claude Code, Hugging Face, LangSmith, Braintrust" />
+  <img src="assets/skills-tools.svg" alt="Data, desktop, AI and tools: PostgreSQL, MySQL, Firebase, Supabase, Tauri, Rust, Java, Git, Docker, Python, Pydantic, Claude Code, Hugging Face, LangSmith" />
 </p>
 
 <p align="center">

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Hello, I'm Lian - Computer Engineering Student" width="100%" />
+  <img src="assets/banner.svg" alt="Computer Engineering Student and AI Engineer" width="100%" />
 </p>
 
 
@@ -19,7 +19,19 @@ If you like what you see, a follow would mean a lot.
 **Data, Desktop & Tools**
 
 <p>
-  <img src="https://skillicons.dev/icons?i=postgres,firebase,supabase,tauri,rust,java,git,docker&theme=dark&perline=8" alt="Data, desktop and tools: PostgreSQL, Firebase, Supabase, Tauri, Rust, Java, Git, Docker" />
+  <img src="https://skillicons.dev/icons?i=postgres,mysql,firebase,supabase,tauri,rust,java,git,docker&theme=dark&perline=9" alt="Data, desktop and tools: PostgreSQL, MySQL, Firebase, Supabase, Tauri, Rust, Java, Git, Docker" />
+</p>
+
+**Python & Core AI**
+
+<p>
+  <img src="assets/skills-ai.svg" alt="Python and core AI: Python, Pydantic, Claude Code" />
+</p>
+
+**MLOps & Production**
+
+<p>
+  <img src="assets/skills-mlops.svg" alt="MLOps and production: Hugging Face, LangSmith, Braintrust" />
 </p>
 
 <p align="center">

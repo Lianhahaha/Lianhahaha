@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Computer Engineering &amp; AI Engineer" width="100%" />
+  <img src="assets/banner.svg" alt="Computer Engineering" width="100%" />
 </p>
 
 
